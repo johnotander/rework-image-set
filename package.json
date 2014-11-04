@@ -1,0 +1,28 @@
+{
+  "name": "rework-image-set",
+  "version": "0.0.1",
+  "description": "Rework CSS plugin to add future-proofed support for W3C-style image-set notation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnotander/rework-image-set.git"
+  },
+  "keywords": [
+    "Rework",
+    "image",
+    "images",
+    "img",
+    "image-set",
+    "css",
+    "responsive"
+  ],
+  "author": "John Otander",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnotander/rework-image-set/issues"
+  },
+  "homepage": "https://github.com/johnotander/rework-image-set"
+}
