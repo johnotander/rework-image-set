@@ -9,9 +9,9 @@ This will allow you to write the following CSS:
 
 ```css
 .bg-img {
-  background-image: image-set("my-img.png" 1x,
-                              "my-img-2x.png" 2x,
-                              "my-img-print.png" 600dpi);
+  background-image: image-set('my-img.png' 1x,
+                              'my-img-2x.png' 2x,
+                              'my-img-print.png' 600dpi);
 }
 ```
 
@@ -20,9 +20,9 @@ And result in the following CSS, with an image fallback:
 ```css
 .bg-img {
   background-image: url('my-img.png');
-  background-image: -webkit-image-set("my-img.png" 1x,
-                                      "my-img-2x.png" 2x,
-                                      "my-img-print.png" 600dpi);
+  background-image: -webkit-image-set('my-img.png' 1x,
+                                      'my-img-2x.png' 2x,
+                                      'my-img-print.png' 600dpi);
 }
 ```
 
