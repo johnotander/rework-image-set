@@ -26,8 +26,10 @@
   },
   "homepage": "https://github.com/johnotander/rework-image-set",
   "dependencies": {
+    "balanced-match": "^0.1.0",
     "rework": "^1.0.1",
-    "rework-walk": "^1.0.0"
+    "rework-walk": "^1.0.0",
+    "to-single-quotes": "^1.0.1"
   },
   "devDependencies": {
     "mocha": "^2.0.1"
