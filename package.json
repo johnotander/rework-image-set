@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/johnotander/rework-image-set",
   "dependencies": {
+    "autoprefixer": "^3.1.0",
     "balanced-match": "^0.1.0",
     "rework": "^1.0.1",
     "rework-walk": "^1.0.0",

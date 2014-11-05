@@ -30,7 +30,13 @@ module.exports = function imageSet() {
           var images = value.substr(openBrace + 1, closeBrace - openBrace - 1)
                             .split(IMAGE_DELIMITER);
 
-          declaration.value = getDefaultImage(images);
+          declaration.value = 'url(' + getDefaultImage(images) + ')';
+
+          rule.declarations.push({
+            type: 'declaration',
+            property: 'background-image',
+            value: value
+          });
         }
       });
 
