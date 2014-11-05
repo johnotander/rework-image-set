@@ -1,5 +1,7 @@
 # Rework Image Set
 
+[![Build Status](https://travis-ci.org/johnotander/rework-image-set.svg?branch=master)](https://travis-ci.org/johnotander/rework-image-set)
+
 This is a [Rework](https://github.com/reworkcss/rework) plugin to add future-proofed support for
 [W3C-style image set](http://www.w3.org/TR/css4-images/) notation.
 
