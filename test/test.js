@@ -14,4 +14,11 @@ describe('rework-image-set', function() {
 
     assert.equal(output, expected);
   });
+
+  it('converts double quotes to single quotes', function() {
+    var output = rework(fixture('quotes.css')).use(imageSet()).toString().trim();
+    var expected = fixture('quotes.css.expected');
+
+    assert.equal(output, expected);
+  });
 });
