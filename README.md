@@ -1,7 +1,5 @@
 # Rework Image Set
 
-_Currently under development._
-
 This is a [Rework](https://github.com/reworkcss/rework) plugin to add future-proofed support for
 [W3C-style image set](http://www.w3.org/TR/css4-images/) notation.
 
