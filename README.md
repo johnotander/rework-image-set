@@ -27,7 +27,8 @@ And result in the following CSS, with an image fallback:
 }
 ```
 
-_Note:_ This functionality currently requires CSS prefixing, I recommend using [autoprefixer](https://github.com/postcss/autoprefixer).
+_Note:_ This functionality currently requires CSS prefixing, it's recommended to use
+[autoprefixer](https://github.com/postcss/autoprefixer).
 
 ## Installation
 
