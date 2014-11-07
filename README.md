@@ -3,7 +3,8 @@
 [![Build Status](https://travis-ci.org/johnotander/rework-image-set.svg?branch=master)](https://travis-ci.org/johnotander/rework-image-set)
 
 This is a [Rework](https://github.com/reworkcss/rework) plugin to add future-proofed support for
-[W3C-style image set](http://www.w3.org/TR/css4-images/) notation.
+[W3C-style image set](http://www.w3.org/TR/css4-images/) notation. This provides a `backround-image`
+fallback for browsers that don't support `image-set`.
 
 This will allow you to write the following CSS:
 
@@ -35,8 +36,6 @@ npm install --save rework-image-set
 ```
 
 ## Usage
-
-Proposed functionality for the Rework plugin:
 
 ```javascript
 var fs       = require('fs'),
