@@ -12,8 +12,6 @@ npm install --save rework-image-set
 
 ## Usage
 
-Proposed functionality for the Rework plugin:
-
 ```javascript
 var fs = require('fs')
 var rework = require('rework')
