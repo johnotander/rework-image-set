@@ -1,24 +1,24 @@
-var assert   = require('assert'),
-    fs       = require('fs'),
-    rework   = require('rework'),
-    imageSet = require('..');
+import test from 'ava'
+import fs from 'fs'
+import rework from 'rework'
+import imageSet from '../'
 
-function fixture(name) {
-  return fs.readFileSync('test/fixtures/' + name, 'utf8').trim();
+test('parses the image-set property correctly', t => {
+  var output = rework(fixture('basic.css')).use(imageSet()).toString().trim()
+  var expected = fixture('basic.expected.css')
+
+  t.same(output, expected)
+  t.end()
+})
+
+test('converts double quotes to single quotes', t => {
+  var output = rework(fixture('quotes.css')).use(imageSet()).toString().trim()
+  var expected = fixture('quotes.expected.css')
+
+  t.same(output, expected)
+  t.end()
+})
+
+function fixture (name) {
+  return fs.readFileSync('test/fixtures/' + name, 'utf8').trim()
 }
-
-describe('rework-image-set', function() {
-  it('parses the image-set property correctly', function() {
-    var output = rework(fixture('basic.css')).use(imageSet()).toString().trim();
-    var expected = fixture('basic.css.expected');
-
-    assert.equal(output, expected);
-  });
-
-  it('converts double quotes to single quotes', function() {
-    var output = rework(fixture('quotes.css')).use(imageSet()).toString().trim();
-    var expected = fixture('quotes.css.expected');
-
-    assert.equal(output, expected);
-  });
-});

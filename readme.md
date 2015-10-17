@@ -1,12 +1,29 @@
-# Rework Image Set
+# rework-image-set [![Build Status](https://travis-ci.org/johnotander/rework-image-set.svg?branch=master)](https://travis-ci.org/johnotander/rework-image-set) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
-[![Build Status](https://travis-ci.org/johnotander/rework-image-set.svg?branch=master)](https://travis-ci.org/johnotander/rework-image-set)
-
-This is a [Rework](https://github.com/reworkcss/rework) plugin to add future-proofed support for
+[Rework](https://github.com/reworkcss/rework) plugin to add future-proofed support for
 [W3C-style image set](http://www.w3.org/TR/css4-images/) notation. This provides a `backround-image`
 fallback for browsers that don't support `image-set`.
 
-This will allow you to write the following CSS:
+## Installation
+
+```
+npm install --save rework-image-set
+```
+
+## Usage
+
+Proposed functionality for the Rework plugin:
+
+```javascript
+var fs = require('fs')
+var rework = require('rework')
+var imageSet = require('rework-image-set')
+
+var css = fs.readFileSync('css/my-file.css', 'utf8').toString()
+var out = rework(css).use(imageSet()).toString()
+```
+
+### Input
 
 ```css
 .bg-img {
@@ -16,7 +33,7 @@ This will allow you to write the following CSS:
 }
 ```
 
-And result in the following CSS, with an image fallback:
+### Output
 
 ```css
 .bg-img {
@@ -29,23 +46,6 @@ And result in the following CSS, with an image fallback:
 
 _Note:_ This functionality currently requires CSS prefixing, it's recommended to use
 [autoprefixer](https://github.com/postcss/autoprefixer).
-
-## Installation
-
-```
-npm install --save rework-image-set
-```
-
-## Usage
-
-```javascript
-var fs       = require('fs'),
-    rework   = require('rework'),
-    imageSet = require('rework-image-set');
-
-var css = fs.readFileSync('css/my-file.css', 'utf8').toString();
-var out = rework(css).use(imageSet({})).toString();
-```
 
 ## License
 
