@@ -1,19 +1,19 @@
-'use strict';
+'use strict'
 
-var walk           = require('rework-walk'),
-    balanced       = require('balanced-match'),
-    toSingleQuotes = require('to-single-quotes');
+var walk = require('rework-walk')
+var balanced = require('balanced-match')
+var toSingleQuotes = require('to-single-quotes')
 
-var PROPERTY_IDENTIFIER = 'background-image',
-    VALUE_IDENTIFIER = 'image-set',
-    IMAGE_DELIMITER = ',';
+var PROPERTY_IDENTIFIER = 'background-image'
+var VALUE_IDENTIFIER = 'image-set'
+var IMAGE_DELIMITER = ','
 
-module.exports = function imageSet() {
-  return function imageSet(css) {
-    walk(css, function(rule, node) {
-      rule.declarations.forEach(function(declaration, i) {
-        var property  = declaration.property,
-            value = declaration.value;
+module.exports = function () {
+  return function imageSet (css) {
+    walk(css, function (rule, node) {
+      rule.declarations.forEach(function (declaration, i) {
+        var property = declaration.property
+        var value = declaration.value
 
         if (property === PROPERTY_IDENTIFIER && value.indexOf(VALUE_IDENTIFIER) === 0) {
           if (!balanced('(', ')', value)) {
@@ -24,27 +24,27 @@ module.exports = function imageSet() {
 
           value = toSingleQuotes(value);
 
-          var openBrace = value.indexOf('('),
-              closeBrace = value.indexOf(')')
+          var openBrace = value.indexOf('(')
+          var closeBrace = value.indexOf(')')
 
           var images = value.substr(openBrace + 1, closeBrace - openBrace - 1)
-                            .split(IMAGE_DELIMITER);
+                            .split(IMAGE_DELIMITER)
 
-          declaration.value = 'url(' + getDefaultImage(images) + ')';
+          declaration.value = 'url(' + getDefaultImage(images) + ')'
 
           rule.declarations.push({
             type: 'declaration',
             property: 'background-image',
             value: value
-          });
+          })
         }
-      });
+      })
 
-      return rule;
-    });
-  };
-};
+      return rule
+    })
+  }
+}
 
-function getDefaultImage(images) {
-  return images[0].trim().match(/'(.+?)'/)[0];
+function getDefaultImage (images) {
+  return images[0].trim().match(/'(.+?)'/)[0]
 }
